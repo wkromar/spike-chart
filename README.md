@@ -9,7 +9,8 @@ Our employee salary calculator is still pretty small and might not need redux ye
 Let's add Redux!
 
 1. Create a `redux` folder inside of the `src` folder
-1. Create an `action.js` file inside of the `redux` folder
+1. Create an `actions` folder inside of the `redux` folder
+1. Create an `employee.action.js` file inside of the `actions` folder
 1. Create a `reducers` folder 
 1. Create an `index.js` file and `employee.reducer.js` file inside of the `reducers` folder
 
