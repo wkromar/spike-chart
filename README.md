@@ -17,9 +17,11 @@ Your assignment is to move the `employeeList` array, `addEmployee` function, and
 
 Let's add some Redux!
 
+
+
 Things you should do:
 1. Make a reducer to handle the state of the employee list 
-2. `Connect` the components that need to communicate with redux
+2. `Connect` the components that need to communicate with redux, both dispatch and mapStateToProps
 3. Dispatch actions that trigger reducer functions
 4. Use the payload to alter state
 
