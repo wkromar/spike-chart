@@ -1,6 +1,6 @@
 # Redux Employee Salary Conversion
 
-Our employee salary calculator is still pretty small and might not need redux yet, but we know our app is going to grow and grow, so we're going to add redux before things get out of hand. Setting up Redux sdis time consuming, but it's worth it!
+Our employee salary calculator is still pretty small and might not need redux yet, but we know our app is going to grow and grow, so we're going to add redux before things get out of hand. Setting up Redux is time consuming, but it's worth it!
 
 ## Setup
 1. Fork this repo
@@ -25,7 +25,8 @@ Things you should do:
 3. Dispatch actions that trigger reducer functions
 4. Use the payload to alter state
 
-
+## Hard Mode
+1. Use `react-router-dom` to pull the form onto its own view. Submitting will still update the list found on the other view.
 
 ## Stretch Goals
 
