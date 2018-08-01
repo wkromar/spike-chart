@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 const emptyEmployeeObject = {
   firstName: '',
@@ -49,9 +48,5 @@ class EmployeeForm extends Component {
     );
   }
 }
-
-EmployeeForm.propTypes = {
-  addEmployee: PropTypes.func.isRequired,
-};
 
 export default EmployeeForm;

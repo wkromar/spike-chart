@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const EmployeeList = ({ employeeList, deleteEmployee }) => (
   <ul>
@@ -17,15 +16,5 @@ const EmployeeList = ({ employeeList, deleteEmployee }) => (
   </ul>
 );
 
-EmployeeList.propTypes = {
-  employeeList: PropTypes.arrayOf(PropTypes.shape({
-    firstName: String,
-    lastName: String,
-    idNumber: String,
-    jobTitle: String,
-    annualSalary: String,
-  })).isRequired,
-  deleteEmployee: PropTypes.func.isRequired,
-};
 
 export default EmployeeList;
