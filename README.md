@@ -25,8 +25,6 @@ Things you should do:
 3. Dispatch actions that trigger reducer functions
 4. Use the payload to alter state
 
-## Hard Mode
-1. Use `react-router-dom` to pull the form onto its own view. Submitting will still update the list found on the other view.
 
 ## Stretch Goals
 
