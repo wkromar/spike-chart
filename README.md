@@ -28,14 +28,26 @@ Things you should do:
 
 ## Stretch Goals
 
-Move your reducers
+Move your reducers:
+
 1. Create a `redux` folder inside of the `src` folder
 2. Create a `reducers` folder inside your `redux` folder
 3. Create an `employee.reducer.js` file inside of the `reducers` folder
 4. Move your reducer into this file, and then export it. Import it where you were using it.
 
-Move your actions
+Move your actions:
+
 1. Create an `actions` folder inside your `redux` folder
 2. Create an `employee.actions.js` file inside `actions` folder
 3. Define your actions here and export them. You'll need to `export` multiple things! Look up named exports: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
 4. Import the actions where you use them. Use them to call the reducers!
+
+
+Style it up w/ Material UI!  Things you might try:
+
+- [Button](https://material-ui.com/demos/buttons/)
+- [List](https://material-ui.com/demos/lists/) or [Tables](https://material-ui.com/demos/tables/)
+- [Icons](https://material-ui.com/style/icons/)
+- [Typography](https://material-ui.com/style/typography/)
+- [Snackbars](https://material-ui.com/demos/snackbars/) - Cool for alerts! 
+- [Themes](https://material-ui.com/customization/themes/)

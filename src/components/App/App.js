@@ -25,9 +25,15 @@ class App extends Component {
   render() {
     return (
       <div>
-        <EmployeeForm addEmployee={this.addEmployee} />
-        <EmployeeList employeeList={this.state.employeeList} deleteEmployee={this.deleteEmployee} />
-        <EmployeeTotal employeeList={this.state.employeeList} />
+        <section>
+          <h2>Add Employee</h2>
+          <EmployeeForm addEmployee={this.addEmployee} />
+        </section>
+        <section>
+          <h2>Employees</h2>
+          <EmployeeList employeeList={this.state.employeeList} deleteEmployee={this.deleteEmployee} />
+          <EmployeeTotal employeeList={this.state.employeeList} />
+        </section>
       </div>
     );
   }
