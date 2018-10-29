@@ -9,29 +9,21 @@ const emptyEmployeeObject = {
 };
 
 class EmployeeForm extends Component {
-  constructor() {
-    super();
+  state = emptyEmployeeObject;
 
-    this.state = emptyEmployeeObject;
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.clearEmployeeFields = this.clearEmployeeFields.bind(this);
-  }
-
-  handleChange(event) {
+  handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
     });
   }
 
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault();
     this.props.addEmployee(this.state);
     this.clearEmployeeFields();
   }
 
-  clearEmployeeFields() {
+  clearEmployeeFields = () => {
     this.setState(emptyEmployeeObject);
   }
 

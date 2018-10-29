@@ -4,24 +4,17 @@ import EmployeeList from '../EmployeeList/EmployeeList';
 import EmployeeTotal from '../EmployeeTotal/EmployeeTotal';
 
 class App extends Component {
-  constructor() {
-    super();
+  state = {
+    employeeList: [],
+  };
 
-    this.state = {
-      employeeList: [],
-    };
-
-    this.addEmployee = this.addEmployee.bind(this);
-    this.deleteEmployee = this.deleteEmployee.bind(this);
-  }
-
-  addEmployee(newEmployee) {
+  addEmployee = (newEmployee) => {
     this.setState({
       employeeList: [...this.state.employeeList, newEmployee],
     });
   }
 
-  deleteEmployee(employeeToDelete) {
+  deleteEmployee = (employeeToDelete) => {
     const matchEmployee = employee => employee.idNumber !== employeeToDelete.idNumber;
 
     this.setState({
