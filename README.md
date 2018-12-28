@@ -35,12 +35,6 @@ Move your reducers:
 3. Create an `employee.reducer.js` file inside of the `reducers` folder
 4. Move your reducer into this file, and then export it. Import it where you were using it.
 
-Move your actions:
-
-1. Create an `actions` folder inside your `redux` folder
-2. Create an `employee.actions.js` file inside `actions` folder
-3. Define your actions here and export them. You'll need to `export` multiple things! Look up named exports: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
-4. Import the actions where you use them. Use them to call the reducers!
 
 
 Style it up w/ Material UI!  Things you might try:
