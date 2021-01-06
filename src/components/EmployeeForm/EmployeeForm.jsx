@@ -1,44 +1,65 @@
-import React, { Component } from 'react';
+import { useState } from 'react';
 
-const emptyEmployeeObject = {
-  firstName: '',
-  lastName: '',
-  idNumber: '',
-  jobTitle: '',
-  annualSalary: '',
-};
+function EmployeeForm({ addEmployee }) {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [idNumber, setIdNumber] = useState('');
+  const [jobTitle, setJobTitle] = useState('');
+  const [annualSalary, setAnnualSalary] = useState('');
 
-class EmployeeForm extends Component {
-  state = emptyEmployeeObject;
-
-  handleChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
-  }
-
-  handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    this.props.addEmployee(this.state);
-    this.clearEmployeeFields();
-  }
 
-  clearEmployeeFields = () => {
-    this.setState(emptyEmployeeObject);
-  }
+    addEmployee({
+      firstName: firstName,
+      lastName: lastName,
+      idNumber: idNumber,
+      jobTitle: jobTitle,
+      annualSalary: annualSalary
+    });
 
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <input onChange={this.handleChange} placeholder="First Name" value={this.state.firstName} name="firstName" />
-        <input onChange={this.handleChange} placeholder="Last Name" value={this.state.lastName} name="lastName" />
-        <input onChange={this.handleChange} placeholder="ID Number" value={this.state.idNumber} name="idNumber" />
-        <input onChange={this.handleChange} placeholder="Job Title" value={this.state.jobTitle} name="jobTitle" />
-        <input onChange={this.handleChange} placeholder="Annual Salary" value={this.state.annualSalary} name="annualSalary" />
-        <input type="submit" value="Submit" />
-      </form>
-    );
-  }
+    clearEmployeeFields();
+  };
+
+  const clearEmployeeFields = () => {
+    setFirstName('');
+    setLastName('');
+    setIdNumber('');
+    setJobTitle('');
+    setAnnualSalary('');
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input 
+        placeholder="First Name" 
+        value={firstName} 
+        onChange={(evt) => setFirstName(evt.target.value)} 
+      />
+      <input 
+        placeholder="Last Name" 
+        value={lastName} 
+        onChange={(evt) => setLastName(evt.target.value)} 
+      />
+      <input 
+        placeholder="ID Number" 
+        value={idNumber} 
+        onChange={(evt) => setIdNumber(evt.target.value)} 
+      />
+      <input 
+        placeholder="Job Title" 
+        value={jobTitle} 
+        onChange={(evt) => setJobTitle(evt.target.value)}
+      />
+      <input 
+        placeholder="Annual Salary" 
+        value={annualSalary} 
+        onChange={(evt) => setAnnualSalary(evt.target.value)} 
+      />
+      
+      <input type="submit" value="Submit" />
+    </form>
+  );
 }
 
 export default EmployeeForm;
