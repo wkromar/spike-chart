@@ -9,6 +9,7 @@ Our employee salary calculator is still pretty small and might not need redux ye
 
 ## Base Mode 
 Let's add some Redux!
+
 ### Setup
 1. Get `redux` and `react-redux` installed
 2. Set up your store, and `Provider`
@@ -17,15 +18,15 @@ Next, think about this goal:
 
 Your assignment is to move the `employeeList` array from local state into a redux state. 
 
-Existing `addEmployee` and `deleteEmployee` functionality in `App.js` will need to be removed from `App` and moved & edited so that they work with the `employeList` reducer.  
+Existing `addEmployee` and `deleteEmployee` functionality in `App.jsx` will need to be removed from `App` and moved & edited so that they work with the `employeeList` reducer.  
 
 Fire off those reducers by dispatching the `'ADD_EMPLOYEE'` and `'DELETE_EMPLOYEE'` actions.
 
 
 ### Implement Redux
 1. Make a reducer to handle the state of the employee list 
-2. `Connect` App.js with redux, both dispatch and/or mapStateToProps
-3. App.js will  `dispatch` appropriate actions for button clicks. 
+2. Add redux hooks to `App.jsx`, both [`useDispatch`](https://react-redux.js.org/next/api/hooks#usedispatch) and/or [`useSelector`](https://react-redux.js.org/next/api/hooks#useselector).
+3. `App.jsx` will  `dispatch` appropriate actions for button clicks. 
 4. The reducer will need to listen for those actions and appropriately change the data
 5. Pass the appropriate data to subcomponents
 
@@ -35,11 +36,10 @@ Now that we've got redux in here, its looking a little silly. We're still passin
 Think about this goal:
 Don't pass props down to subcomponents. Instead, have the subcomponents reach out to redux directly.
 
-1. Connect EmployeeList
-2. Remove props passed to Employee List
-3. mapStateToProps in EmployeeList and access correct data
-4. Repeat for EmployeeForm
-5. Repeat for EmployeeTotal -- NOTE: connecting a functional component is the same, just make sure the props are named correctly
+1. Remove props passed to Employee List
+2. `useSelector` in EmployeeList and access correct data
+3. Repeat for EmployeeForm
+4. Repeat for EmployeeTotal
 
 
 ## Stretch Goals
