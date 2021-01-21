@@ -1,4 +1,8 @@
-function EmployeeTotal({ employeeList }) {
+import {useSelector} from 'react-redux';
+
+function EmployeeTotal() {
+
+  const employeeList = useSelector(store=>store.employeeListReducer)
 
   const calculateMonthlyCost = employeeList => {
     /*

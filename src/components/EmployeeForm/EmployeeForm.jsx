@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useState } from 'react';import {useDispatch} from 'react-redux';
 
 function EmployeeForm({ addEmployee }) {
+
+  const dispatch = useDispatch();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [idNumber, setIdNumber] = useState('');
@@ -10,14 +12,14 @@ function EmployeeForm({ addEmployee }) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    addEmployee({
+    const newEmployee = {
       firstName: firstName,
       lastName: lastName,
       idNumber: idNumber,
       jobTitle: jobTitle,
       annualSalary: annualSalary
-    });
-
+    };
+    dispatch({type:"ADD_NEW", payload: newEmployee})
     clearEmployeeFields();
   };
 

@@ -10,13 +10,14 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 
 
 const employeeListReducer = (state = [], action) =>{
-    switch(action.type){
-        case "ADD_EMPLOYEE":
-            return action.payload
-            default :
-                return state;
-    }
+   switch(action.type){
+       case "ADD_NEW":
+        return[...state, action.payload];
+   case 'DELETE':return state.filter(employee => employee.idNumber !==action.payload)
+   } return state;
 }
+
+
 
 
 const reduxStore = createStore(
@@ -24,7 +25,6 @@ const reduxStore = createStore(
     employeeListReducer
 }),
   applyMiddleware(logger)
-);
-
+)
 ReactDOM.render(<Provider store={reduxStore}><App /></Provider>, document.getElementById('root'));
 registerServiceWorker;

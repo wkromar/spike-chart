@@ -2,28 +2,18 @@ import { useState, useEffect } from 'react';
 import EmployeeForm from '../EmployeeForm/EmployeeForm';
 import EmployeeList from '../EmployeeList/EmployeeList';
 import EmployeeTotal from '../EmployeeTotal/EmployeeTotal';
-import {useDispatch} from 'react-redux'
-import axios from 'axios';
+import {useDispatch, useSelector} from 'react-redux';
+
 
 function App() {
-  const [employeeList, setEmployeeList] = useState([]);
-
+  // const [employeeList, setEmployeeList] = useState([]);
+  const employeeList = useSelector(store => store.employeeListReducer)
+  const dispatch = useDispatch();
   // This functionality should be in a reducer!
   const addEmployee = (newEmployee) => {
-    console.log(newEmployee);
-    setEmployeeList([...employeeList, newEmployee]);
-    
-    employeeList.push(newEmployee);
-    console.log(employeeList);
-  };
-
-  const dispatch = useDispatch();
-
-   useEffect(() => {
-    // fetchEmployees();
-  }, [])
-
-  
+    dispatch({type: "NEW_EMPLOYEE", payload:newEmployee})
+  }
+   
   // This functionality should be in a reducer!
   const deleteEmployee = (employeeToDelete) => {
 
@@ -57,12 +47,12 @@ function App() {
     <div>
       <section>
         <h2>Add Employee</h2>
-        <EmployeeForm addEmployee={addEmployee} />
+        <EmployeeForm/>
       </section>
       <section>
         <h2>Employees</h2>
-        <EmployeeList employeeList={employeeList} deleteEmployee={deleteEmployee} />
-        <EmployeeTotal employeeList={employeeList} />
+        <EmployeeList/>
+        <EmployeeTotal/>
       </section>
     </div>
   );

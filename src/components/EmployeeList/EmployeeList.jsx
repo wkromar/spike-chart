@@ -1,38 +1,34 @@
-import {useSelector} from 'react-redux'
 
-function EmployeeList(){
-  const employeeList = useSelector(store => store.employeeListReducer)
+import {useDispatch, useSelector} from 'react-redux';
 
-  return(
-    <section>
-      <h2>List of Employees</h2>
-      <ul>
-        {employeeList.map((employee, idNumber) => 
-        <li key={idNumber}>{employee.firstName} {employee.lastName} is the {employee.jobTitle} and makes {employee.annualSalary}</li>)}
-      </ul>
-    </section>
+function EmployeeList() {
 
-  )
-}export default EmployeeList;
+    const employeeList = useSelector(store => store.employeeListReducer)
+
+    const dispatch = useDispatch();
+
+    const deleteEmployee = (deleter) =>{
+      console.log('deleting', deleter)
+      dispatch({type: 'DELETE', payload: deleter.idNumber})
+    }
 
 
-// function EmployeeList({ employeeList, deleteEmployee }) {
-//   return (
-//     <ul>
-//       {employeeList.map(employee => (
-//         <li key={employee.idNumber}>
-//           {`${employee.firstName}
-//           ${employee.lastName}
-//           is the ${employee.jobTitle}
-//           and makes ${employee.annualSalary}`}
-//           <button onClick={() => deleteEmployee(employee)}>
-//             Delete
-//           </button>
-//         </li>
-//       ))}
-//     </ul>
-//   );
-// }
+  return (
+    <ul>
+      {employeeList.map(employee => (
+        <li key={employee.idNumber}>
+          {`${employee.firstName}
+          ${employee.lastName}
+          is the ${employee.jobTitle}
+          and makes ${employee.annualSalary}`}
+          <button onClick={() => deleteEmployee(employee)}>
+            Delete
+          </button>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 
-// export default EmployeeList;
+export default EmployeeList;
