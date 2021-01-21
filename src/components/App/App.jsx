@@ -1,16 +1,29 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import EmployeeForm from '../EmployeeForm/EmployeeForm';
 import EmployeeList from '../EmployeeList/EmployeeList';
 import EmployeeTotal from '../EmployeeTotal/EmployeeTotal';
+import {useDispatch} from 'react-redux'
+import axios from 'axios';
 
 function App() {
   const [employeeList, setEmployeeList] = useState([]);
 
   // This functionality should be in a reducer!
   const addEmployee = (newEmployee) => {
+    console.log(newEmployee);
     setEmployeeList([...employeeList, newEmployee]);
+    
+    employeeList.push(newEmployee);
+    console.log(employeeList);
   };
 
+  const dispatch = useDispatch();
+
+   useEffect(() => {
+    // fetchEmployees();
+  }, [])
+
+  
   // This functionality should be in a reducer!
   const deleteEmployee = (employeeToDelete) => {
 
